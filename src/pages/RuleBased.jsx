@@ -21,7 +21,7 @@ export default function RuleBased() {
     setResults([]);
 
     try {
-      const res = await fetch(`http://3.106.215.1:8000/rekomendasi/rule`, {
+      const res = await fetch(`https://3.106.215.1:8000/rekomendasi/rule`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ jenis: selectedJenis })
