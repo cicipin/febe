@@ -19,6 +19,19 @@ Frontend ini dibangun menggunakan **React.js** dengan **Tailwind CSS**, dan teri
 
 ---
 
+## 📸 Tampilan Aplikasi
+
+Berikut adalah salah satu tampilan dari aplikasi Cicip.In:
+
+![aplikasi1](./ss1.png)
+![aplikasi2](./ss2.png)
+![aplikasi3](./ss3.png)
+![aplikasi4](./ss4.png)
+![aplikasi5](./ss5.png)
+![aplikasi6](./ss6.png)
+
+---
+
 ## 📁 Struktur Folder
 
 ```
