@@ -21,7 +21,7 @@ export default function LocationBased() {
           const longitude = position.coords.longitude;
 
           try {
-            const res = await fetch("https://cicipin-api.duckdns.org/rekomendasi/location", {
+            const res = await fetch("http://3.106.215.1:8000/rekomendasi/location", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ lat: latitude, lon: longitude }),

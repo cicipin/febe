@@ -10,7 +10,6 @@ export default function ContentBased() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Fetch dataset.json
   useEffect(() => {
     fetch("/dataset.json")
       .then((res) => res.json())
@@ -34,19 +33,13 @@ export default function ContentBased() {
       });
 
       const text = await res.text();
-      let data;
-      try {
-        data = JSON.parse(
-          text
-            .replace(/NaN/g, "null")
-            .replace(/Infinity/g, "null")
-            .replace(/-Infinity/g, "null")
-        );
-        setResults(data);
-      } catch (err) {
-        alert("Respons dari server tidak valid.");
-        console.error("JSON parse error:", err);
-      }
+      const data = JSON.parse(
+        text
+          .replace(/NaN/g, "null")
+          .replace(/Infinity/g, "null")
+          .replace(/-Infinity/g, "null")
+      );
+      setResults(data);
     } catch (err) {
       alert("Gagal mengambil rekomendasi");
       console.error(err);
@@ -64,7 +57,7 @@ export default function ContentBased() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow max-w-6xl mx-auto px-4 py-8">
+      <main className="flex-grow w-full max-w-6xl mx-auto px-4 py-8">
         <button
           onClick={() => navigate("/")}
           className="mb-6 text-blue-600 hover:underline text-sm"
@@ -78,18 +71,18 @@ export default function ContentBased() {
         </p>
 
         {/* Daftar toko acak - scroll horizontal */}
-        <div className="overflow-x-auto pb-2 mb-4">
-          <div className="flex gap-4">
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto pb-2 mb-4">
+          <div className="flex gap-4 snap-x snap-mandatory">
             {randomStores.map((toko) => (
               <div
                 key={toko.toko_id}
                 onClick={() => handleSelect(toko.toko_id)}
-                className={`min-w-[240px] max-w-[240px] border rounded-lg p-4 shadow-sm cursor-pointer hover:bg-blue-50 transition-all ${
+                className={`min-w-[200px] sm:min-w-[240px] max-w-[240px] snap-start border rounded-lg p-4 shadow-sm cursor-pointer hover:bg-blue-50 transition-all ${
                   selectedStoreId === toko.toko_id ? "border-blue-500 bg-blue-100 shadow-md" : ""
                 }`}
               >
                 <h3 className="font-semibold text-lg mb-1">{toko.Title}</h3>
-                <p className="text-xs text-gray-600 mb-1">{toko.Alamat}</p>
+                <p className="text-xs text-gray-600 mb-1 truncate">{toko.Alamat}</p>
                 <p className="text-sm mb-1">⭐ {toko.Rating} | 💬 {toko.Review} ulasan</p>
                 <p className="text-sm text-gray-500">{toko.Harga}</p>
               </div>
@@ -112,7 +105,7 @@ export default function ContentBased() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full text-center py-6 text-sm text-gray-600 border-t bg-white">
+      <footer className="w-full text-center py-6 text-sm text-gray-600 border-t bg-white mt-8">
         <p className="mb-1">
           👨‍💻 Dibuat oleh <strong>Tim Cicip.in</strong> |{" "}
           <a
