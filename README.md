@@ -1,12 +1,105 @@
-# React + Vite
+# 🌐 Cicip.In - Frontend Aplikasi Rekomendasi Kuliner Jogja
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Cicip.In** adalah aplikasi web interaktif yang memberikan rekomendasi kuliner terbaik di Kota Yogyakarta. Sistem ini mengandalkan 3 pendekatan utama dalam memberikan rekomendasi:
+- 🔎 **Content-Based Filtering** (berdasarkan kesamaan toko)
+- 📋 **Rule-Based Filtering** (berdasarkan input jenis makanan)
+- 📍 **Location-Based Filtering** (berdasarkan jarak pengguna)
 
-Currently, two official plugins are available:
+Frontend ini dibangun menggunakan **React.js** dengan **Tailwind CSS**, dan terintegrasi dengan backend berbasis Flask & TensorFlow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Fitur Utama
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- UI interaktif & ringan
+- Peta rekomendasi berdasarkan lokasi pengguna
+- Form input sederhana & cepat
+- Terhubung langsung ke API rekomendasi
+- Navigasi halaman per kategori (content, rule, location)
+
+---
+
+## 📁 Struktur Folder
+
+```
+public/
+├── dataset.json
+├── index.html
+├── kuliner-jogja.png
+└── vite.svg
+
+src/
+├── assets/
+├── components/
+│   ├── MapComponent.jsx
+│   └── RecommendationList.jsx
+├── pages/
+│   ├── ContentBased.jsx
+│   ├── RuleBased.jsx
+│   ├── LocationBased.jsx
+│   └── Home.jsx
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+---
+
+## 🛠️ Cara Menjalankan di Lokal
+
+### 1. Clone repositori
+```bash
+git clone https://github.com/cicipin/febe.git
+cd frontend-cicipin
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Jalankan server
+```bash
+npm run dev
+```
+
+Aplikasi akan berjalan di [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🔗 Koneksi ke Backend API
+
+Frontend akan otomatis terhubung ke API publik:
+
+```
+http://cicipin-api.duckdns.org/
+```
+
+API ini digunakan untuk semua metode rekomendasi:  
+`/rekomendasi/content`, `/rekomendasi/rule`, dan `/rekomendasi/location`.
+
+---
+
+## 🧪 Build untuk Produksi
+
+```bash
+npm run build
+```
+
+---
+
+## 📄 Lisensi & Kontribusi
+
+Proyek ini dikembangkan sebagai bagian dari submission pembelajaran.  
+Kontribusi dan feedback dipersilakan melalui issues & pull request.
+
+---
+
+## 📬 Kontak
+
+Untuk pertanyaan atau kolaborasi:
+📧 mc008d5y2338@student.devacademy.id
+
+---
+
+Terima kasih telah menggunakan Cicip.In! 🍴
