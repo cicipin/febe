@@ -40,6 +40,12 @@ public/
 ├── index.html
 ├── kuliner-jogja.png
 └── vite.svg
+└── ss1.png
+└── ss2.png
+└── ss3.png
+└── ss4.png
+└── ss5.png
+└── ss6.png
 
 src/
 ├── assets/
