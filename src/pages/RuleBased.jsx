@@ -3,7 +3,7 @@ import RecommendationList from '../components/RecommendationList';
 import { useNavigate } from "react-router-dom";
 
 const options = {
-  berat: ['gudeg', 'soto', 'nasgor', 'angkringan', 'sate', 'miayambakso', 'naspad'],
+  berat: ['gudeg', 'soto', 'nasgor', 'angkringan', 'sate', 'mieayambakso', 'naspad'],
   ringan: ['pempek', 'bakpia', 'serabi', 'rotbar', 'martabak', 'dimsum'],
   minuman: ['kopijoss', 'esthesolo', 'jusbuah', 'wronde', 'dawet', 'wuwuh'],
 };
